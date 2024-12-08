@@ -1,10 +1,12 @@
 import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
+import { HelloWorld } from "./components/HelloWorld";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
     {
       id: "vP3fSs1mrb7oakQrQm5ggD",
-      token: "aMcvrjGdrpDBhEMWalXYGvOa8EkueBdcXll0vKJ1haqI2TnUlc3lBNAmTbW6FgSucU78bomd2DirTMVR82Lg",
+      token:
+        "aMcvrjGdrpDBhEMWalXYGvOa8EkueBdcXll0vKJ1haqI2TnUlc3lBNAmTbW6FgSucU78bomd2DirTMVR82Lg",
     },
   ],
 
@@ -23,3 +25,10 @@ export const PLASMIC = initPlasmicLoader({
 // https://docs.plasmic.app/learn/app-hosting/#set-a-plasmic-project-to-use-your-app-host
 
 // PLASMIC.registerComponent(...);
+PLASMIC.registerComponent(HelloWorld, {
+  name: "HelloWorld",
+  props: {
+    verbose: "boolean",
+    children: "slot",
+  },
+});
